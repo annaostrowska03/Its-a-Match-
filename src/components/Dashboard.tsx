@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { User } from '../App';
+import { Button } from './ui/button';
 import { RouteInput } from './RouteInput';
 import { UserPreferences } from './UserPreferences';
 import { ReportIssue } from './ReportIssue';
