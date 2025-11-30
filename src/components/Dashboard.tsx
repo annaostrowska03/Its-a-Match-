@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { User } from '../App';
 import { Button } from './ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { RouteInput } from './RouteInput';
 import { UserPreferences } from './UserPreferences';
 import { ReportIssue } from './ReportIssue';
