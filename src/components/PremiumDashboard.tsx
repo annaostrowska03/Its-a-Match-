@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { User } from '../App';
 import { PremiumRouteInput } from './PremiumRouteInput';
 import { UserPreferences } from './UserPreferences';
 import { ReportIssue } from './ReportIssue';
