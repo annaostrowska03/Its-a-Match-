@@ -174,7 +174,7 @@ export function RouteInput({ user }: RouteInputProps) {
 
             <div className="border-t pt-4">
               <div className="flex items-start justify-between">
-                <div>
+                <div className="flex-1">
                   <p className="flex items-center gap-2">
                     <Fuel className="size-4" />
                     {route.recommendedStation.name}
@@ -196,6 +196,18 @@ export function RouteInput({ user }: RouteInputProps) {
                   </p>
                 </div>
               </div>
+              <Button 
+                className="w-full mt-4"
+                onClick={() => {
+                  const stationAddress = encodeURIComponent(route.recommendedStation.address);
+                  const startAddress = encodeURIComponent(origin);
+                  const endAddress = encodeURIComponent(destination);
+                  window.open(`https://www.google.com/maps/dir/${startAddress}/${stationAddress}/${endAddress}`, '_blank');
+                }}
+              >
+                <Navigation className="size-4 mr-2" />
+                Nawiguj do stacji
+              </Button>
             </div>
           </CardContent>
         </Card>

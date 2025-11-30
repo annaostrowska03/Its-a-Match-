@@ -230,7 +230,7 @@ export function PremiumRouteInput({ user }: PremiumRouteInputProps) {
 
                 <div className="border-t pt-4">
                   <div className="flex items-start justify-between">
-                    <div>
+                    <div className="flex-1">
                       <p className="flex items-center gap-2">
                         <Fuel className="size-4" />
                         {route.recommendedStation.name}
@@ -254,8 +254,17 @@ export function PremiumRouteInput({ user }: PremiumRouteInputProps) {
                   </div>
                 </div>
 
-                <Button className="w-full" variant="outline">
-                  Wybierz tę trasę
+                <Button 
+                  className="w-full bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600"
+                  onClick={() => {
+                    const stationAddress = encodeURIComponent(route.recommendedStation.address);
+                    const startAddress = encodeURIComponent(origin);
+                    const endAddress = encodeURIComponent(destination);
+                    window.open(`https://www.google.com/maps/dir/${startAddress}/${stationAddress}/${endAddress}`, '_blank');
+                  }}
+                >
+                  <Navigation className="size-4 mr-2" />
+                  Nawiguj do stacji
                 </Button>
               </CardContent>
             </Card>
